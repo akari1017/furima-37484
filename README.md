@@ -35,33 +35,30 @@ Things you may want to cover:
 | first_name         | string | null: false               |
 | last_name_kana     | string | null: false               |
 | first_name_kana    | string | null: false               |
-| birth_year         | date   | null: false               |
-| birth_month        | date   | null: false               |
-| birth_day          | date   | null: false               |
+| birth_date         | date   | null: false               |
 
 ### Association
 
 - has_many :items
-- has_many :purchased_items, through: :item
-- has_one  :users_address,   through: :item
+- has_many :purchased_items
 
 
 
 ## items テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| name        | string     | null: false,                   |
-| description | text       | null: false                    |
-| category    | string     | null: false                    |
-| status      | string     | null: false                    |
-| Ship_fee    | integer    | null: false                    |
-| ship_area   | string     | null: false                    |
-| ship_time   | string     | null: false                    |
-| price       | integer    | null: false                    |
-| fees        | integer    | null: false                    |
-| benefit     | integer    | null: false                    |
-| user        | references | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| name         | string     | null: false,                   |
+| description  | text       | null: false                    |
+| category_id  | integer    | null: false                    |
+| status_id    | integer    | null: false                    |
+| Ship_fee_id  | integer    | null: false                    |
+| ship_area_id | integer    | null: false                    |
+| ship_time_id | integer    | null: false                    |
+| price        | integer    | null: false                    |
+| fees         | integer    | null: false                    |
+| benefit      | integer    | null: false                    |
+| user         | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :users
@@ -89,14 +86,12 @@ Things you may want to cover:
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
 | zip      | integer    | null: false                    |
-| region   | string     | null: false                    |
+| region   | integer    | null: false                    |
 | city     | string     | null: false                    |
-| block    | integer    | null: false                    |
+| block    | string     | null: false                    |
 | building | string     |                                |
-| phone    | integer    | null: false                    |
-| user     | references | null: false, foreign_key: true |
+| phone    | string     | null: false                    |
 | item     | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :room
-- belongs_to :user
+- belongs_to :item
