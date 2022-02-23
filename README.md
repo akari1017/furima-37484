@@ -52,7 +52,7 @@ Things you may want to cover:
 | description  | text       | null: false                    |
 | category_id  | integer    | null: false                    |
 | status_id    | integer    | null: false                    |
-| Ship_fee_id  | integer    | null: false                    |
+| ship_fee_id  | integer    | null: false                    |
 | region_id    | integer    | null: false                    |
 | ship_time_id | integer    | null: false                    |
 | price        | integer    | null: false                    |
