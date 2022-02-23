@@ -40,7 +40,6 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :purchased_items
 
 
 
@@ -53,45 +52,45 @@ Things you may want to cover:
 | category_id  | integer    | null: false                    |
 | status_id    | integer    | null: false                    |
 | Ship_fee_id  | integer    | null: false                    |
-| ship_area_id | integer    | null: false                    |
+| region_id    | integer    | null: false                    |
 | ship_time_id | integer    | null: false                    |
 | price        | integer    | null: false                    |
-| fees         | integer    | null: false                    |
-| benefit      | integer    | null: false                    |
 | user         | references | null: false, foreign_key: true |
 
 ### Association
-- has_many :users
-- has_one  :purchased_item, through: :user
-- has_one  :users_address,  through: :user
+
+- has_one  :users
+- has_one  :purchased_item
 
 
 
 ## purchased_items テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| address | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 
 ### Association
-- belongs_to :room
-- belongs_to :user
+
+- has_one :item
+- has_one :address
 
 
 
-## users_addresses テーブル
+## addresses テーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| zip      | integer    | null: false                    |
-| region   | integer    | null: false                    |
-| city     | string     | null: false                    |
-| block    | string     | null: false                    |
-| building | string     |                                |
-| phone    | string     | null: false                    |
-| item     | references | null: false, foreign_key: true |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| zip             | string     | null: false                    |
+| region_id       | integer    | null: false                    |
+| city            | string     | null: false                    |
+| block           | string     | null: false                    |
+| building        | string     |                                |
+| phone           | string     | null: false                    |
+| purchased_items | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :item
+
+- has_one :purchased_items
