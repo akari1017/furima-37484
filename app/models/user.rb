@@ -17,9 +17,6 @@ class User < ApplicationRecord
     # カタカナのみ許可する
     validates :last_name_kana, format: {with: /\A[ァ-ヶー]+\z/, message: "is invalid. Input full-width katakana characters."}
     validates :first_name_kana, format: {with: /\A[ァ-ヶー]+\z/, message: "is invalid. Input full-width katakana characters."}
-    # 半角英字数字のみ許可する
-    validates :password, format: {with: /\A[a-z0-9]+\z/i, message: "is invalid. Input half-width characters."}
-    validates :password_confirmation, format: {with: /\A[a-z0-9]+\z/i, message: "is invalid. Input half-width characters."}
   end
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
