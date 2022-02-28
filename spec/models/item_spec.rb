@@ -13,7 +13,7 @@ describe '商品登録' do
      end
     context '商品が出品できない場合' do
       it 'nameが空では保存できない' do
-        @item.neme = ''
+        @item.name = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Name can't be blank")
       end
@@ -35,7 +35,7 @@ describe '商品登録' do
       it 'ship_fee_idが空では保存できない' do
         @item.ship_fee_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Ship_Fee can't be blank")
+        expect(@item.errors.full_messages).to include("Ship fee can't be blank")
       end
       it 'region_idが空では保存できない' do
         @item.region_id = ''
@@ -45,7 +45,7 @@ describe '商品登録' do
       it 'ship_time_idが空では保存できない' do
         @item.ship_time_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Ship_Time can't be blank")
+        expect(@item.errors.full_messages).to include("Ship time can't be blank")
       end
       it 'priceが空では保存できない' do
         @item.price = ''
@@ -53,24 +53,24 @@ describe '商品登録' do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it 'priceが全角数字では保存できない' do
-        @message.price = '１０００'
-        @message.valid?
-        expect(@message.errors.full_messages).to include('Price is invalid')
+        @item.price = '１０００'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
       it 'priceが300以下では保存できない' do
-        @message.price = '299'
-        @message.valid?
-        expect(@message.errors.full_messages).to include('Price is invalid')
+        @item.price = '299'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
       it 'priceが9999999以上では保存できない' do
-        @message.price = '10000000'
-        @message.valid?
-        expect(@message.errors.full_messages).to include('Price is invalid')
+        @item.price = '10000000'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
       it 'userが紐付いていないと保存できない' do
         @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User can't be blank")
+        expect(@item.errors.full_messages).to include("User must exist")
       end
     end
   end

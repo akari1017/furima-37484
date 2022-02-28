@@ -1,14 +1,13 @@
 FactoryBot.define do
   factory :item do
-    name         { 'あああ' }
-    description  { 'あああ' }
-    category_id  { '1' }
-    status_id    { '1' }
-    ship_fee_id  { '1' }
-    region_id    { '1' }
-    ship_time_id { '1' }
+    name         { 'あいうえお' }
+    description  { 'あいうえお' }
+    category_id  { '2' }
+    status_id    { '2' }
+    ship_fee_id  { '2' }
+    region_id    { '2' }
+    ship_time_id { '2' }
     price        { '1000' }
-    user_id      { '1' }
     association :user
 
     after(:build) do |item|
