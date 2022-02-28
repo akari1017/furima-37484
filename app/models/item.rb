@@ -18,11 +18,11 @@ class Item < ApplicationRecord
   validates :price,        presence: true
   validates :image,        presence: true
 
-  validates :category_id, numericality: { other_than: 1 }
-  validates :status_id, numericality: { other_than: 1 }
-  validates :ship_fee_id, numericality: { other_than: 1 }
-  validates :region_id, numericality: { other_than: 1 }
-  validates :ship_time_id, numericality: { other_than: 1 }
+  validates :category_id, numericality: { other_than: 0 }
+  validates :status_id, numericality: { other_than: 0 }
+  validates :ship_fee_id, numericality: { other_than: 0 }
+  validates :region_id, numericality: { other_than: 0 }
+  validates :ship_time_id, numericality: { other_than: 0 }
 
   # 1以上、1000000以下の整数を許可する
   validates :price, presence: true,
