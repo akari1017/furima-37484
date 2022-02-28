@@ -16,6 +16,7 @@ class Item < ApplicationRecord
   validates :region_id,    presence: true
   validates :ship_time_id, presence: true
   validates :price,        presence: true
+  validates :image,        presence: true
 
   validates :category_id, numericality: { other_than: 1 }
   validates :status_id, numericality: { other_than: 1 }
@@ -31,7 +32,4 @@ class Item < ApplicationRecord
   validates :price, format: {with: /\A[0-9]+\z/, message: "価格は半角数字で入力してください"}
   end
 
-  def was_attached?
-    self.image.attached?
-  end
 end

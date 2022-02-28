@@ -72,6 +72,12 @@ describe '商品登録' do
         @item.valid?
         expect(@item.errors.full_messages).to include("User must exist")
       end
+      it 'imageが空では保存できない' do
+        @item.image = nil
+        @item.valid?
+        binding.pry
+        expect(@item.errors.full_messages).to include("Image can't be blank")
+      end
     end
   end
 end
