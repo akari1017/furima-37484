@@ -30,7 +30,7 @@ RSpec.describe Item, type: :model do
       it 'category_idが0では保存できない' do
         @item.category_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 0")
+        expect(@item.errors.full_messages).to include('Category must be other than 0')
       end
       it 'status_idが空では保存できない' do
         @item.status_id = ''
@@ -40,7 +40,7 @@ RSpec.describe Item, type: :model do
       it 'status_idが0では保存できない' do
         @item.status_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status must be other than 0")
+        expect(@item.errors.full_messages).to include('Status must be other than 0')
       end
       it 'ship_fee_idが空では保存できない' do
         @item.ship_fee_id = ''
@@ -50,7 +50,7 @@ RSpec.describe Item, type: :model do
       it 'ship_fee_idが0では保存できない' do
         @item.ship_fee_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Ship fee must be other than 0")
+        expect(@item.errors.full_messages).to include('Ship fee must be other than 0')
       end
       it 'region_idが空では保存できない' do
         @item.region_id = ''
@@ -60,7 +60,7 @@ RSpec.describe Item, type: :model do
       it 'region_idが0では保存できない' do
         @item.region_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Region must be other than 0")
+        expect(@item.errors.full_messages).to include('Region must be other than 0')
       end
       it 'ship_time_idが空では保存できない' do
         @item.ship_time_id = ''
@@ -70,7 +70,7 @@ RSpec.describe Item, type: :model do
       it 'ship_time_idが0では保存できない' do
         @item.ship_time_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Ship time must be other than 0")
+        expect(@item.errors.full_messages).to include('Ship time must be other than 0')
       end
       it 'priceが空では保存できない' do
         @item.price = ''
