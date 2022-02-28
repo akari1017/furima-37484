@@ -5,12 +5,12 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:item)
   end
 
-describe '商品登録' do
+  describe '商品登録' do
     context '商品が出品できる場合' do
       it '全ての項目が存在していれば保存できる' do
         expect(@item).to be_valid
       end
-     end
+    end
     context '商品が出品できない場合' do
       it 'nameが空では保存できない' do
         @item.name = ''
@@ -70,7 +70,7 @@ describe '商品登録' do
       it 'userが紐付いていないと保存できない' do
         @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User must exist")
+        expect(@item.errors.full_messages).to include('User must exist')
       end
       it 'imageが空では保存できない' do
         @item.image = nil

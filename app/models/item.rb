@@ -25,11 +25,11 @@ class Item < ApplicationRecord
   validates :ship_time_id, numericality: { other_than: 1 }
 
   # 1以上、1000000以下の整数を許可する
-  validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is invalid"}
+  validates :price, presence: true,
+                    numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'is invalid' }
 
   with_options presence: true do
-  # 半角数字のみ許可する
-  validates :price, format: {with: /\A[0-9]+\z/, message: "価格は半角数字で入力してください"}
+    # 半角数字のみ許可する
+    validates :price, format: { with: /\A[0-9]+\z/, message: '価格は半角数字で入力してください' }
   end
-
 end
