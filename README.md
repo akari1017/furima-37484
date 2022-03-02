@@ -65,7 +65,7 @@ Things you may want to cover:
 
 
 
-## purchased_items テーブル
+## orders テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
