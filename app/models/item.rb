@@ -32,4 +32,7 @@ class Item < ApplicationRecord
     # 半角数字のみ許可する
     validates :price, format: { with: /\A[0-9]+\z/, message: '価格は半角数字で入力してください' }
   end
+
+  belongs_to :user
+  has_one    :order
 end
