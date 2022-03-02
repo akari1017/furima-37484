@@ -16,7 +16,7 @@ class OrderAddress
   validates :zip, format: { with: /\A[0-9]+\z/, message: '郵便番号は半角数字で入力してください' }
   # 電話番号は10桁以上11桁以内の半角数値のみ保存を許可する
   validates :phone, format: { with: /\A\d{10,11}\z/, message: 'is invalid' }
-  validates :price, format: { with: /\A[0-9]+\z/, message: '電話番号は半角数字で入力してください' }
+  validates :phone, format: { with: /\A[0-9]+\z/, message: '電話番号は半角数字で入力してください' }
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
