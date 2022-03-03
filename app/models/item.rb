@@ -27,10 +27,7 @@ class Item < ApplicationRecord
   validates :price, presence: true,
                     numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'is invalid' }
 
-  with_options presence: true do
-    # 半角数字のみ許可する
-    validates :price, format: { with: /\A[0-9]+\z/, message: '価格は半角数字で入力してください' }
-  end
+  validates :price, format: { with: /\A[0-9]+\z/, message: 'is invalid' }
 
   belongs_to :user
   has_one    :order
