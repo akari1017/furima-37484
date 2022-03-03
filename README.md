@@ -40,7 +40,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :purchased_items
+- has_many :order
 
 
 
@@ -61,7 +61,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one  :purchased_item
+- has_one    :order
 
 
 
@@ -83,16 +83,16 @@ Things you may want to cover:
 
 ## addresses テーブル
 
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| zip            | string     | null: false                    |
-| region_id      | integer    | null: false                    |
-| city           | string     | null: false                    |
-| block          | string     | null: false                    |
-| building       | string     |                                |
-| phone          | string     | null: false                    |
-| purchased_item | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| zip       | string     | null: false                    |
+| region_id | integer    | null: false                    |
+| city      | string     | null: false                    |
+| block     | string     | null: false                    |
+| building  | string     |                                |
+| phone     | string     | null: false                    |
+| order     | references | null: false, foreign_key: true |
 
 ### Association
 
-- belong_to :purchased_item
+- belong_to :order
