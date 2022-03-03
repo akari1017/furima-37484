@@ -9,6 +9,7 @@ class OrderAddress
   validates :phone,     presence: true
   validates :user_id,   presence: true
   validates :item_id,   presence: true
+  validates :token,     presence: true
   
   # 郵便番号は3桁ハイフン4桁での保存を許可する
   validates :zip, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'を入力してください' }
