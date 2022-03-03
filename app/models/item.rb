@@ -15,7 +15,6 @@ class Item < ApplicationRecord
   validates :ship_fee,     presence: true
   validates :region_id,    presence: true
   validates :ship_time_id, presence: true
-  validates :price,        presence: true
   validates :image,        presence: true
 
   validates :category_id, numericality: { other_than: 0 }
