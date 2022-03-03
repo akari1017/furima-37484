@@ -25,9 +25,9 @@ class Item < ApplicationRecord
 
   # 1以上、1000000以下の整数を許可する
   validates :price, presence: true,
-                    numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'is invalid' }
+                    numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'is invalid. Input half-width characters' }
 
-  validates :price, format: { with: /\A[0-9]+\z/, message: 'is invalid' }
+  validates :price, format: { with: /\A[0-9]+\z/, message: 'is out of setting range' }
 
   belongs_to :user
   has_one    :order
