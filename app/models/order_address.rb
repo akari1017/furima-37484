@@ -17,6 +17,8 @@ class OrderAddress
   validates :phone, format: { with: /\A\d{10,11}\z/, message: 'is invalid' }
   validates :phone, format: { with: /\A[0-9]+\z/, message: 'を入力してください' }
 
+  validates :region_id, numericality: { other_than: 0 }
+
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
     Address.create(zip: zip, region_id: region_id, city: city, block: block, building: building, phone: phone, order_id: order.id)

@@ -31,9 +31,9 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("Zip を入力してください")
       end
       it 'region_idを選択していないと保存できないこと' do
-        @order_address.region_id = ''
+        @order_address.region_id = '0'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Region can't be blank")
+        expect(@order_address.errors.full_messages).to include("Region must be other than 0")
       end
       it 'cityが空だと保存できないこと' do
         @order_address.city = ''
@@ -55,12 +55,12 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone is invalid")
       end
-      it 'phoneが10桁以下だと保存できないこと' do
+      it 'phoneが9桁以下だと保存できないこと' do
         @order_address.phone = '111111111'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone is invalid")
       end
-      it 'phoneが11桁以上だと保存できないこと' do
+      it 'phoneが12桁以上だと保存できないこと' do
         @order_address.phone = '111111111111'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone is invalid")
