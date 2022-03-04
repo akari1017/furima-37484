@@ -12,10 +12,10 @@ class OrderAddress
   validates :token,     presence: true
   
   # 郵便番号は3桁ハイフン4桁での保存を許可する
-  validates :zip, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'を入力してください' }
+  validates :zip, format: { with: /\A\d{3}[-]\d{4}\z/ }
   # 電話番号は10桁以上11桁以内の半角数値のみ保存を許可する
-  validates :phone, format: { with: /\A\d{10,11}\z/, message: 'is invalid' }
-  validates :phone, format: { with: /\A[0-9]+\z/, message: 'を入力してください' }
+  validates :phone, format: { with: /\A\d{10,11}\z/ }
+  validates :phone, format: { with: /\A[0-9]+\z/ }
 
   validates :region_id, numericality: { other_than: 0 }
 
